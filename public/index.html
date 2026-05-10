@@ -57,7 +57,7 @@
         </nav>
         
         <!-- Hero Layout -->
-        <section class="relative flex flex-col items-center justify-center min-h-[100vh] overflow-hidden">
+        <section class="relative flex flex-col items-center justify-start min-h-[100vh] overflow-hidden pt-28 md:pt-40">
             
             <!-- Background Image & Overlays -->
             <div class="absolute inset-0 z-0">
@@ -67,8 +67,10 @@
                     class="w-full h-full object-cover object-center opacity-90"
                     alt="Shop Front"
                 />
-                <!-- Dark overlay without blur -->
-                <div class="absolute inset-0 bg-black/60 z-10 pointer-events-none"></div>
+                <div class="absolute inset-0 bg-black/60 backdrop-blur-[2px] z-10 pointer-events-none"></div>
+                
+                <!-- Continuous soft neon glow effect (purple and pink) -->
+                <div class="absolute inset-0 shadow-[inset_0_0_120px_rgba(188,19,254,0.4),inset_0_0_60px_rgba(255,0,127,0.3)] z-10 pointer-events-none"></div>
                 
                 <!-- Center soft glow, stable, no pulse -->
                 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[700px] md:h-[700px] bg-gradient-to-br from-primary/25 to-secondary/25 blur-[120px] md:blur-[180px] rounded-full z-10 pointer-events-none mix-blend-screen"></div>
@@ -78,7 +80,7 @@
             </div>
 
             <!-- Content -->
-            <div class="w-full max-w-5xl flex flex-col justify-center items-center px-6 pt-24 relative z-20 text-center animate-fade-in-up">
+            <div class="w-full max-w-5xl flex flex-col items-center px-6 relative z-20 text-center animate-fade-in-up">
                 
                 <!-- Tagline Badge -->
                 <div class="inline-flex items-center justify-center gap-2 mb-6 bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 shadow-[0_4px_15px_rgba(0,0,0,0.3)]">
