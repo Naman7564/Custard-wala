@@ -114,11 +114,24 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right transition-transform duration-300 group-hover:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                     </a>
                 </div>
+            <!-- Scroll Down Indicator -->
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center justify-center z-30 animate-fade-in-up" style="animation-delay: 0.8s;">
+                <button onclick="document.getElementById('explore-section').scrollIntoView({behavior: 'smooth'})" class="group flex flex-col items-center gap-3 cursor-pointer focus:outline-none">
+                    <!-- 3D Glassmorphism Pill -->
+                    <div class="w-12 h-16 md:w-14 md:h-[72px] rounded-full bg-white/5 backdrop-blur-md border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_2px_15px_rgba(255,255,255,0.1),0_0_20px_rgba(188,19,254,0.3)] flex justify-center items-start pt-3 relative overflow-hidden transition-all duration-500 hover:shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_2px_15px_rgba(255,255,255,0.1),0_0_40px_rgba(188,19,254,0.6)] group-hover:-translate-y-2 group-hover:bg-white/10">
+                        <!-- Animated Arrow -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-down text-white animate-bounce drop-shadow-[0_0_10px_rgba(188,19,254,0.8)]"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+                    </div>
+                    <!-- Subtext -->
+                    <span class="text-white/80 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] group-hover:text-white transition-colors duration-300 drop-shadow-md">
+                        Explore Menu
+                    </span>
+                </button>
             </div>
         </section>
 
         <!-- Marquee or Features strip -->
-        <div class="border-y border-black/10 bg-white py-6 overflow-hidden flex items-center shadow-[0_0_20px_rgba(255,0,127,0.1)]">
+        <div id="explore-section" class="border-y border-black/10 bg-white py-6 overflow-hidden flex items-center shadow-[0_0_20px_rgba(255,0,127,0.1)]">
             <div class="flex gap-16 whitespace-nowrap px-8 text-primary font-headings text-2xl font-bold uppercase tracking-widest opacity-80 animate-marquee">
                 <span>★ Special Custards</span>
                 <span>★ Cheesy Pizzas</span>
