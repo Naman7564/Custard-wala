@@ -35,193 +35,271 @@
         }
       }
     </script>
+    <style>
+      .scrollbar-hide::-webkit-scrollbar { display: none; }
+      .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+      .tab-active {
+        background: white;
+        border: 2px solid var(--color-primary);
+        color: var(--color-primary);
+        font-weight: 800;
+        box-shadow: 0 0 14px rgba(188,19,254,0.25);
+      }
+      .tab-inactive {
+        background: white;
+        border: 1.5px solid #e2e8f0;
+        color: #64748b;
+      }
+      .tab-inactive:hover {
+        border-color: var(--color-primary);
+        color: var(--color-primary);
+      }
+      .card-hover:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(188,19,254,0.13); }
+    </style>
 </head>
-<body class="bg-background text-foreground font-body">
-    <div class="min-h-screen overflow-x-hidden relative">
-        <!-- Navigation -->
-        <nav class="absolute top-0 w-full z-50 bg-transparent px-8 py-6 flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-3">
-                <img src="https://firebasestorage.googleapis.com/v0/b/banani-prod.appspot.com/o/reference-images%2Fec6f08d4-129f-4931-955e-7b5edb19a280?alt=media&token=fb98f42d-6c63-406a-8be9-97b6b2a25122" alt="Custard Wala Logo" class="h-10 w-10 rounded-full object-cover shadow-[0_0_10px_var(--color-primary)]" />
-                <span class="font-headings text-xl font-bold tracking-widest uppercase">Custard Wala</span>
-            </a>
-            <div class="flex items-center gap-4">
-                <a href="index.html" class="bg-black/5 border border-black/10 text-foreground px-4 py-2 rounded-md text-sm font-bold tracking-wider uppercase hover:bg-black/10 transition-colors">
-                    Back to Home
-                </a>
-            </div>
-        </nav>
+<body class="bg-[#f5f3ff] text-foreground font-body min-h-screen">
 
-        <!-- Full Menu Section -->
-        <section id="full-menu" class="relative pt-24">
-            <!-- Background Glows -->
-            <div class="absolute top-0 left-[-50px] w-[200px] h-[200px] bg-primary/20 blur-[100px] rounded-full pointer-events-none"></div>
-            <div class="absolute top-[20%] right-[-50px] w-[200px] h-[200px] bg-secondary/15 blur-[100px] rounded-full pointer-events-none"></div>
+    <!-- ── TOP NAVBAR ───────────────────────────────────────── -->
+    <nav class="bg-white border-b border-black/5 px-4 md:px-10 py-3 flex items-center gap-3 md:gap-6 sticky top-0 z-50 shadow-sm">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-2 shrink-0">
+            <img src="https://firebasestorage.googleapis.com/v0/b/banani-prod.appspot.com/o/reference-images%2Fec6f08d4-129f-4931-955e-7b5edb19a280?alt=media&token=fb98f42d-6c63-406a-8be9-97b6b2a25122"
+                 alt="Custard Wala Logo" class="h-9 w-9 rounded-full object-cover shadow-[0_0_8px_rgba(188,19,254,0.5)]" />
+            <span class="font-headings text-sm md:text-base font-black tracking-widest uppercase leading-tight">Custard<br class="hidden sm:block"/>Wala</span>
+        </a>
 
-            <!-- App Header -->
-            <header class="px-6 pt-16 pb-6 flex justify-between items-center relative z-20 max-w-[1400px] mx-auto w-full">
-                <div>
-                    <h1 class="font-headings text-3xl font-bold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-                        Menu
-                    </h1>
-                    <p class="text-sm text-muted-foreground mt-1">What are you craving?</p>
-                </div>
-                <button class="bg-black/5 p-3 rounded-full text-foreground border border-black/10 shadow-sm hover:bg-black/10 transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-                </button>
-            </header>
+        <!-- Search bar -->
+        <div class="flex-1 relative max-w-xl mx-auto">
+            <svg class="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <input type="text" placeholder="Search our menu..."
+                   class="w-full pl-9 pr-4 py-2 rounded-full border-2 border-primary/40 focus:border-primary focus:outline-none bg-white text-sm transition-all duration-200 shadow-sm focus:shadow-[0_0_12px_rgba(188,19,254,0.2)]" />
+        </div>
 
-            <!-- Sticky Categories Section -->
-            <div class="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-y border-black/5 shadow-[0_8px_30px_rgba(0,0,0,0.08)]">
-                <div class="max-w-[1400px] mx-auto w-full px-4 py-4 overflow-x-auto [&::-webkit-scrollbar]:hidden scrollbar-hide">
-                    <div class="flex items-start justify-start md:justify-center gap-2 md:gap-6 min-w-max md:min-w-0 mx-auto">
+        <!-- Back to Home -->
+        <a href="index.html"
+           class="shrink-0 border-2 border-foreground text-foreground text-[11px] md:text-sm font-bold tracking-wider uppercase px-3 md:px-5 py-2 rounded-full hover:bg-foreground hover:text-white transition-all duration-200">
+            Back to Home
+        </a>
+    </nav>
 
-                    <!-- Custards (Active) -->
-                    <button class="flex flex-col items-center gap-2 min-w-[68px] group cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95">
-                        <div class="w-[60px] h-[60px] md:w-[68px] md:h-[68px] rounded-full flex items-center justify-center border-2 transition-all duration-300 relative bg-primary/10 border-primary text-primary shadow-[0_0_18px_rgba(188,19,254,0.4)]">
-                            <div class="absolute inset-0 bg-primary/15 blur-sm rounded-full"></div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="relative z-10"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        </div>
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-center text-primary whitespace-nowrap">Custards</span>
-                    </button>
+    <!-- ── HERO BANNER ──────────────────────────────────────── -->
+    <div class="relative bg-gradient-to-r from-purple-50 via-white to-purple-50 overflow-hidden border-b border-black/5">
+        <!-- decorative glow lines -->
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-1/2 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-primary/30 to-transparent -translate-y-1/2"></div>
+            <div class="absolute top-0 left-1/4 w-[2px] h-full bg-gradient-to-b from-transparent via-primary/20 to-transparent"></div>
+            <div class="absolute top-0 right-1/4 w-[2px] h-full bg-gradient-to-b from-transparent via-secondary/20 to-transparent"></div>
+        </div>
 
-                    <!-- Thick Shakes -->
-                    <button class="flex flex-col items-center gap-2 min-w-[68px] group cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95">
-                        <div class="w-[60px] h-[60px] md:w-[68px] md:h-[68px] rounded-full flex items-center justify-center border-2 transition-all duration-300 border-black/10 bg-black/3 text-muted-foreground group-hover:border-primary/40 group-hover:text-primary group-hover:shadow-[0_0_12px_rgba(188,19,254,0.2)]">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" x2="6" y1="2" y2="4"/><line x1="10" x2="10" y1="2" y2="4"/><line x1="14" x2="14" y1="2" y2="4"/></svg>
-                        </div>
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-center text-muted-foreground group-hover:text-foreground whitespace-nowrap transition-colors duration-300">Thick Shakes</span>
-                    </button>
-
-                    <!-- Pizza -->
-                    <button class="flex flex-col items-center gap-2 min-w-[68px] group cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95">
-                        <div class="w-[60px] h-[60px] md:w-[68px] md:h-[68px] rounded-full flex items-center justify-center border-2 transition-all duration-300 border-black/10 bg-black/3 text-muted-foreground group-hover:border-primary/40 group-hover:text-primary group-hover:shadow-[0_0_12px_rgba(188,19,254,0.2)]">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 11h.01"/><path d="M11 15h.01"/><path d="M16 16h.01"/><path d="m2 16 20 6-6-20A20 20 0 0 0 2 16"/><path d="M5.71 17.11a17.04 17.04 0 0 1 11.4-11.4"/></svg>
-                        </div>
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-center text-muted-foreground group-hover:text-foreground whitespace-nowrap transition-colors duration-300">Pizza</span>
-                    </button>
-
-                    <!-- Sandwiches -->
-                    <button class="flex flex-col items-center gap-2 min-w-[68px] group cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95">
-                        <div class="w-[60px] h-[60px] md:w-[68px] md:h-[68px] rounded-full flex items-center justify-center border-2 transition-all duration-300 border-black/10 bg-black/3 text-muted-foreground group-hover:border-primary/40 group-hover:text-primary group-hover:shadow-[0_0_12px_rgba(188,19,254,0.2)]">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2" ry="2"/><line x1="2" x2="22" y1="9" y2="9"/><line x1="2" x2="22" y1="15" y2="15"/></svg>
-                        </div>
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-center text-muted-foreground group-hover:text-foreground whitespace-nowrap transition-colors duration-300">Sandwiches</span>
-                    </button>
-
-                    <!-- South Indian -->
-                    <button class="flex flex-col items-center gap-2 min-w-[68px] group cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95">
-                        <div class="w-[60px] h-[60px] md:w-[68px] md:h-[68px] rounded-full flex items-center justify-center border-2 transition-all duration-300 border-black/10 bg-black/3 text-muted-foreground group-hover:border-primary/40 group-hover:text-primary group-hover:shadow-[0_0_12px_rgba(188,19,254,0.2)]">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
-                        </div>
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-center text-muted-foreground group-hover:text-foreground whitespace-nowrap transition-colors duration-300">South Indian</span>
-                    </button>
-
-                    <!-- Combos -->
-                    <button class="flex flex-col items-center gap-2 min-w-[68px] group cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95">
-                        <div class="w-[60px] h-[60px] md:w-[68px] md:h-[68px] rounded-full flex items-center justify-center border-2 transition-all duration-300 border-black/10 bg-black/3 text-muted-foreground group-hover:border-primary/40 group-hover:text-primary group-hover:shadow-[0_0_12px_rgba(188,19,254,0.2)]">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
-                        </div>
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-center text-muted-foreground group-hover:text-foreground whitespace-nowrap transition-colors duration-300">Combos</span>
-                    </button>
-
-                    <!-- Ice Cream -->
-                    <button class="flex flex-col items-center gap-2 min-w-[68px] group cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95">
-                        <div class="w-[60px] h-[60px] md:w-[68px] md:h-[68px] rounded-full flex items-center justify-center border-2 transition-all duration-300 border-black/10 bg-black/3 text-muted-foreground group-hover:border-primary/40 group-hover:text-primary group-hover:shadow-[0_0_12px_rgba(188,19,254,0.2)]">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 11 4.08 10.35a1 1 0 0 0 1.84 0L17 11"/><path d="M17 7A5 5 0 0 0 7 7c0 2 1.5 4 1.5 4h7s1.5-2 1.5-4Z"/></svg>
-                        </div>
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-center text-muted-foreground group-hover:text-foreground whitespace-nowrap transition-colors duration-300">Ice Cream</span>
-                    </button>
-
-                    <!-- Drinks -->
-                    <button class="flex flex-col items-center gap-2 min-w-[68px] group cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95">
-                        <div class="w-[60px] h-[60px] md:w-[68px] md:h-[68px] rounded-full flex items-center justify-center border-2 transition-all duration-300 border-black/10 bg-black/3 text-muted-foreground group-hover:border-primary/40 group-hover:text-primary group-hover:shadow-[0_0_12px_rgba(188,19,254,0.2)]">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 22 1-15h6l1 15"/><path d="M6 7h12"/><path d="m12 3-1 4"/></svg>
-                        </div>
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-center text-muted-foreground group-hover:text-foreground whitespace-nowrap transition-colors duration-300">Drinks</span>
-                    </button>
-
-                    </div>
-                </div>
+        <div class="max-w-[1400px] mx-auto flex items-center justify-between min-h-[160px] md:min-h-[200px]">
+            <!-- Left food images -->
+            <div class="hidden sm:flex gap-2 px-4 py-4">
+                <img src="https://firebasestorage.googleapis.com/v0/b/banani-prod.appspot.com/o/reference-images%2F1eced71f-477b-4a75-9932-92bfc56f6e5b?alt=media&token=03310519-6775-4f84-b8e2-4632133b8ade"
+                     class="w-24 h-28 md:w-32 md:h-36 object-cover rounded-2xl shadow-lg -rotate-3" alt="Custard" />
+                <img src="https://firebasestorage.googleapis.com/v0/b/banani-prod.appspot.com/o/reference-images%2Ff53961d3-de3f-4d33-8418-1f367b680864?alt=media&token=c7baf86a-6a20-471c-89b3-19a878f30453"
+                     class="w-20 h-24 md:w-28 md:h-32 object-cover rounded-2xl shadow-lg translate-y-2 rotate-2" alt="Shake" />
             </div>
 
-            <!-- Menu Items Container -->
-            <div class="px-6 pt-10 pb-24 relative z-10 space-y-6 max-w-[1400px] mx-auto w-full">
-                <div class="flex items-center justify-between mb-6">
-                    <h2 class="font-headings text-2xl font-bold uppercase tracking-widest text-foreground">Signature Custards</h2>
-                    <span class="text-xs text-primary uppercase font-bold tracking-wider px-3 py-1 bg-primary/10 rounded-full border border-primary/20">6 Items</span>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Item 1 -->
-                    <div class="bg-white border border-black/10 rounded-3xl p-4 flex gap-4 relative shadow-[0_0_15px_rgba(188,19,254,0.05)] hover:border-primary/50 transition-colors group">
-                        <div class="w-[100px] h-[100px] rounded-2xl overflow-hidden shrink-0 relative">
-                            <div class="absolute inset-0 bg-primary/20 mix-blend-overlay group-hover:opacity-0 transition-opacity"></div>
-                            <img src="https://firebasestorage.googleapis.com/v0/b/banani-prod.appspot.com/o/reference-images%2F1eced71f-477b-4a75-9932-92bfc56f6e5b?alt=media&token=03310519-6775-4f84-b8e2-4632133b8ade" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" alt="Royal Custard" />
-                        </div>
-                        <div class="flex-1 flex flex-col justify-center">
-                            <h3 class="font-headings text-lg font-bold uppercase mb-1 text-foreground">Royal Custard</h3>
-                            <p class="text-[10px] text-muted-foreground mb-3 line-clamp-2 leading-relaxed">
-                                Loaded with fresh fruits, dry fruits, and secret syrup.
-                            </p>
-                            <div class="flex justify-between items-center mt-auto">
-                                <span class="font-headings text-base font-bold text-primary drop-shadow-[0_0_8px_var(--color-primary)]">₹249</span>
-                                <button class="bg-primary/20 text-primary p-2 rounded-full border border-primary shadow-[0_0_10px_var(--color-primary)] hover:bg-primary hover:text-white transition-colors">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Item 2 -->
-                    <div class="bg-white border border-black/10 rounded-3xl p-4 flex gap-4 relative hover:border-white/30 transition-colors group">
-                        <div class="w-[100px] h-[100px] rounded-2xl overflow-hidden shrink-0 relative">
-                            <img src="https://firebasestorage.googleapis.com/v0/b/banani-prod.appspot.com/o/reference-images%2Ff53961d3-de3f-4d33-8418-1f367b680864?alt=media&token=c7baf86a-6a20-471c-89b3-19a878f30453" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" alt="Choco Delight" />
-                        </div>
-                        <div class="flex-1 flex flex-col justify-center">
-                            <h3 class="font-headings text-lg font-bold uppercase mb-1 text-foreground">Choco Delight</h3>
-                            <p class="text-[10px] text-muted-foreground mb-3 line-clamp-2 leading-relaxed">
-                                A rich chocolate base topped with strawberries and nuts.
-                            </p>
-                            <div class="flex justify-between items-center mt-auto">
-                                <span class="font-headings text-base font-bold text-foreground">₹199</span>
-                                <button class="bg-black/5 text-foreground p-2 rounded-full border border-black/20 hover:bg-black hover:text-white transition-colors">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Item 3 -->
-                    <div class="bg-white border border-black/10 rounded-3xl p-4 flex gap-4 relative hover:border-secondary/50 transition-colors group">
-                        <div class="w-[100px] h-[100px] rounded-2xl overflow-hidden shrink-0 relative">
-                            <div class="absolute top-2 left-2 z-10 bg-secondary text-white text-[8px] font-bold uppercase px-2 py-0.5 rounded-full shadow-[0_0_8px_var(--color-secondary)]">
-                                New
-                            </div>
-                            <img src="https://images.unsplash.com/photo-1550461716-e8ce1da63a23?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" alt="Mango Magic" />
-                        </div>
-                        <div class="flex-1 flex flex-col justify-center">
-                            <h3 class="font-headings text-lg font-bold uppercase mb-1 text-foreground">Mango Magic</h3>
-                            <p class="text-[10px] text-muted-foreground mb-3 line-clamp-2 leading-relaxed">
-                                Seasonal fresh mangoes with our signature classic base.
-                            </p>
-                            <div class="flex justify-between items-center mt-auto">
-                                <span class="font-headings text-base font-bold text-secondary drop-shadow-[0_0_8px_var(--color-secondary)]">₹179</span>
-                                <button class="bg-secondary/20 text-secondary p-2 rounded-full border border-secondary shadow-[0_0_10px_var(--color-secondary)] hover:bg-secondary hover:text-white transition-colors">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <!-- Centre text -->
+            <div class="flex-1 text-center px-4 py-6 md:py-8">
+                <h1 class="font-headings text-2xl sm:text-3xl md:text-5xl font-black uppercase leading-tight text-foreground">
+                    Explore Our<br/>Signature Menu
+                </h1>
+                <p class="text-muted-foreground text-sm md:text-base mt-2">Indulge in our exquisite creations.</p>
             </div>
-        </section>
 
-        <!-- Footer -->
-        <footer class="bg-white py-12 border-t border-black/10">
-            <div class="max-w-[1400px] mx-auto px-6 text-center">
-                <p class="text-muted-foreground text-sm uppercase tracking-widest">© 2024 Custard Wala. All Rights Reserved.</p>
+            <!-- Right food images -->
+            <div class="hidden sm:flex gap-2 px-4 py-4">
+                <img src="https://images.unsplash.com/photo-1550461716-e8ce1da63a23?auto=format&fit=crop&q=80&w=400"
+                     class="w-20 h-24 md:w-28 md:h-32 object-cover rounded-2xl shadow-lg -rotate-2" alt="Mango" />
+                <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&q=80&w=400"
+                     class="w-24 h-28 md:w-32 md:h-36 object-cover rounded-2xl shadow-lg rotate-3" alt="Dessert" />
             </div>
-        </footer>
+        </div>
     </div>
+
+    <!-- ── CATEGORY PILL TABS ───────────────────────────────── -->
+    <div class="bg-white border-b border-black/5 shadow-sm sticky top-[57px] z-40">
+        <div class="max-w-[1400px] mx-auto px-4 py-3 overflow-x-auto scrollbar-hide">
+            <div class="flex items-center gap-2 min-w-max" id="category-tabs">
+                <button onclick="setCategory(this, 'custards')"   class="tab-btn tab-active  px-4 py-2 rounded-full text-[11px] md:text-xs font-bold uppercase tracking-wider transition-all duration-200 whitespace-nowrap">Custards</button>
+                <button onclick="setCategory(this, 'shakes')"     class="tab-btn tab-inactive px-4 py-2 rounded-full text-[11px] md:text-xs font-bold uppercase tracking-wider transition-all duration-200 whitespace-nowrap">Thick Shakes</button>
+                <button onclick="setCategory(this, 'pizza')"      class="tab-btn tab-inactive px-4 py-2 rounded-full text-[11px] md:text-xs font-bold uppercase tracking-wider transition-all duration-200 whitespace-nowrap">Pizza</button>
+                <button onclick="setCategory(this, 'sandwiches')" class="tab-btn tab-inactive px-4 py-2 rounded-full text-[11px] md:text-xs font-bold uppercase tracking-wider transition-all duration-200 whitespace-nowrap">Sandwiches</button>
+                <button onclick="setCategory(this, 'southindian')" class="tab-btn tab-inactive px-4 py-2 rounded-full text-[11px] md:text-xs font-bold uppercase tracking-wider transition-all duration-200 whitespace-nowrap">South Indian</button>
+                <button onclick="setCategory(this, 'combos')"     class="tab-btn tab-inactive px-4 py-2 rounded-full text-[11px] md:text-xs font-bold uppercase tracking-wider transition-all duration-200 whitespace-nowrap">Combos</button>
+                <button onclick="setCategory(this, 'icecream')"   class="tab-btn tab-inactive px-4 py-2 rounded-full text-[11px] md:text-xs font-bold uppercase tracking-wider transition-all duration-200 whitespace-nowrap">Ice Cream</button>
+                <button onclick="setCategory(this, 'drinks')"     class="tab-btn tab-inactive px-4 py-2 rounded-full text-[11px] md:text-xs font-bold uppercase tracking-wider transition-all duration-200 whitespace-nowrap">Drinks</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── MENU ITEMS ───────────────────────────────────────── -->
+    <main class="max-w-[1400px] mx-auto px-4 md:px-8 py-8 pb-20">
+
+        <!-- Section heading -->
+        <div class="flex items-center justify-between mb-6">
+            <h2 class="font-headings text-lg md:text-2xl font-black uppercase tracking-wider text-foreground">
+                <span class="text-muted-foreground font-bold">Chef Recommended</span>
+                <span class="mx-2 text-black/20">|</span>
+                Signature Custards
+            </h2>
+            <span class="text-xs text-primary font-bold uppercase tracking-wider px-3 py-1 bg-primary/10 rounded-full border border-primary/30 whitespace-nowrap">6 Items</span>
+        </div>
+
+        <!-- Cards grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+
+            <!-- Card 1: Saffron Pistachio Custard -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.07)] border border-black/5 transition-all duration-300 card-hover">
+                <div class="w-full h-48 overflow-hidden">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/banani-prod.appspot.com/o/reference-images%2F1eced71f-477b-4a75-9932-92bfc56f6e5b?alt=media&token=03310519-6775-4f84-b8e2-4632133b8ade"
+                         class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt="Saffron Pistachio Custard" />
+                </div>
+                <div class="p-4">
+                    <h3 class="font-headings text-base font-bold uppercase text-foreground mb-1">Saffron Pistachio Custard</h3>
+                    <p class="text-xs text-muted-foreground leading-relaxed mb-4 line-clamp-2">Loaded with fresh fruits, dry fruits, and secret syrup.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="font-headings text-lg font-black text-primary">₹249</span>
+                        <button class="flex items-center gap-2 text-xs font-bold text-foreground hover:text-primary transition-colors group">
+                            Add to Cart
+                            <span class="w-7 h-7 rounded-full bg-primary flex items-center justify-center shadow-[0_0_10px_rgba(188,19,254,0.4)] group-hover:scale-110 transition-transform">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Choco Delight (NEW badge) -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.07)] border border-black/5 transition-all duration-300 card-hover">
+                <div class="w-full h-48 overflow-hidden relative">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/banani-prod.appspot.com/o/reference-images%2Ff53961d3-de3f-4d33-8418-1f367b680864?alt=media&token=c7baf86a-6a20-471c-89b3-19a878f30453"
+                         class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt="Choco Delight" />
+                    <span class="absolute top-3 left-3 bg-secondary text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-full shadow-[0_0_8px_rgba(255,0,127,0.5)]">New</span>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-headings text-base font-bold uppercase text-foreground mb-1">Choco Delight</h3>
+                    <p class="text-xs text-muted-foreground leading-relaxed mb-4 line-clamp-2">A rich chocolate base topped with strawberries and nuts.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="font-headings text-lg font-black text-primary">₹199</span>
+                        <button class="flex items-center gap-2 text-xs font-bold text-foreground hover:text-primary transition-colors group">
+                            Add to Cart
+                            <span class="w-7 h-7 rounded-full bg-primary flex items-center justify-center shadow-[0_0_10px_rgba(188,19,254,0.4)] group-hover:scale-110 transition-transform">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Mango Magic -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.07)] border border-black/5 transition-all duration-300 card-hover">
+                <div class="w-full h-48 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1550461716-e8ce1da63a23?auto=format&fit=crop&q=80&w=800"
+                         class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt="Mango Magic" />
+                </div>
+                <div class="p-4">
+                    <h3 class="font-headings text-base font-bold uppercase text-foreground mb-1">Mango Magic</h3>
+                    <p class="text-xs text-muted-foreground leading-relaxed mb-4 line-clamp-2">Seasonal fresh mangoes with our signature classic base.</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="font-headings text-lg font-black text-primary">₹179</span>
+                            <span class="line-through text-muted-foreground text-xs font-medium">₹219</span>
+                        </div>
+                        <button class="flex items-center gap-2 text-xs font-bold text-foreground hover:text-primary transition-colors group">
+                            Add to Cart
+                            <span class="w-7 h-7 rounded-full bg-primary flex items-center justify-center shadow-[0_0_10px_rgba(188,19,254,0.4)] group-hover:scale-110 transition-transform">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4: Royal Custard -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.07)] border border-black/5 transition-all duration-300 card-hover">
+                <div class="w-full h-48 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&q=80&w=800"
+                         class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt="Royal Custard" />
+                </div>
+                <div class="p-4">
+                    <h3 class="font-headings text-base font-bold uppercase text-foreground mb-1">Royal Custard</h3>
+                    <p class="text-xs text-muted-foreground leading-relaxed mb-4 line-clamp-2">Premium dry fruits, rose petals, and a touch of silver leaf.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="font-headings text-lg font-black text-primary">₹299</span>
+                        <button class="flex items-center gap-2 text-xs font-bold text-foreground hover:text-primary transition-colors group">
+                            Add to Cart
+                            <span class="w-7 h-7 rounded-full bg-primary flex items-center justify-center shadow-[0_0_10px_rgba(188,19,254,0.4)] group-hover:scale-110 transition-transform">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5: Berry Blast -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.07)] border border-black/5 transition-all duration-300 card-hover">
+                <div class="w-full h-48 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1488900128323-21503983a07e?auto=format&fit=crop&q=80&w=800"
+                         class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt="Berry Blast" />
+                    <span class="absolute top-3 left-3 bg-secondary text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-full shadow-[0_0_8px_rgba(255,0,127,0.5)]">New</span>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-headings text-base font-bold uppercase text-foreground mb-1">Berry Blast</h3>
+                    <p class="text-xs text-muted-foreground leading-relaxed mb-4 line-clamp-2">A vibrant mix of seasonal berries with creamy custard base.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="font-headings text-lg font-black text-primary">₹219</span>
+                        <button class="flex items-center gap-2 text-xs font-bold text-foreground hover:text-primary transition-colors group">
+                            Add to Cart
+                            <span class="w-7 h-7 rounded-full bg-primary flex items-center justify-center shadow-[0_0_10px_rgba(188,19,254,0.4)] group-hover:scale-110 transition-transform">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6: Classic Vanilla -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.07)] border border-black/5 transition-all duration-300 card-hover">
+                <div class="w-full h-48 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&q=80&w=800"
+                         class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt="Classic Vanilla" />
+                </div>
+                <div class="p-4">
+                    <h3 class="font-headings text-base font-bold uppercase text-foreground mb-1">Classic Vanilla</h3>
+                    <p class="text-xs text-muted-foreground leading-relaxed mb-4 line-clamp-2">Timeless vanilla custard with caramel drizzle and almonds.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="font-headings text-lg font-black text-primary">₹159</span>
+                        <button class="flex items-center gap-2 text-xs font-bold text-foreground hover:text-primary transition-colors group">
+                            Add to Cart
+                            <span class="w-7 h-7 rounded-full bg-primary flex items-center justify-center shadow-[0_0_10px_rgba(188,19,254,0.4)] group-hover:scale-110 transition-transform">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ── FOOTER ────────────────────────────────────────────── -->
+    <footer class="bg-white py-8 border-t border-black/5">
+        <div class="max-w-[1400px] mx-auto px-6 text-center">
+            <p class="text-muted-foreground text-sm uppercase tracking-widest">© 2024 Custard Wala. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function setCategory(btn, cat) {
+            document.querySelectorAll('.tab-btn').forEach(b => {
+                b.classList.remove('tab-active');
+                b.classList.add('tab-inactive');
+            });
+            btn.classList.remove('tab-inactive');
+            btn.classList.add('tab-active');
+        }
+    </script>
 </body>
 </html>
