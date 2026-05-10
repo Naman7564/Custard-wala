@@ -69,8 +69,9 @@
                 <div class="hidden md:block absolute inset-0 bg-gradient-to-r from-[#050505] to-transparent z-10 w-32"></div>
                 
                 <img 
+                    id="hero-bg-image"
                     src="https://firebasestorage.googleapis.com/v0/b/banani-prod.appspot.com/o/reference-images%2Fac232cfd-9216-4d89-ae6e-b1188a7dc63f?alt=media&token=8716e46b-7b49-4993-934d-d5feec119f07" 
-                    class="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-500"
+                    class="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-700"
                     alt="Shop Front"
                 />
                 <!-- Overlay elements (Desktop Only) -->
@@ -307,5 +308,19 @@
             </div>
         </section>
     </div>
+
+    <script>
+        // Trigger glow up effect on scroll for mobile
+        window.addEventListener('scroll', () => {
+            const heroBg = document.getElementById('hero-bg-image');
+            if (heroBg) {
+                if (window.scrollY > 50) {
+                    heroBg.classList.remove('grayscale');
+                } else {
+                    heroBg.classList.add('grayscale');
+                }
+            }
+        });
+    </script>
 </body>
 </html>
