@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custard Wala - Premium Desserts</title>
+    <meta name="description" content="Experience the ultimate blend of sweet treats and savory delights in a modern, neon-lit atmosphere in Sagar.">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              background: 'var(--color-background)',
+              foreground: 'var(--color-foreground)',
+              primary: {
+                DEFAULT: 'var(--color-primary)',
+                foreground: 'var(--color-primary-foreground)',
+              },
+              secondary: {
+                DEFAULT: 'var(--color-secondary)',
+                foreground: 'var(--color-secondary-foreground)',
+              },
+              muted: {
+                DEFAULT: 'var(--color-muted)',
+                foreground: 'var(--color-muted-foreground)',
+              }
+            },
+            fontFamily: {
+              body: ['Inter', 'sans-serif'],
+              headings: ['Space Grotesk', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body>
+    <div class="min-h-[1000px] bg-[#050505] text-white overflow-x-hidden font-body">
+        <nav class="absolute top-0 w-full z-50 bg-transparent px-8 py-6 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="https://firebasestorage.googleapis.com/v0/b/banani-prod.appspot.com/o/reference-images%2Fec6f08d4-129f-4931-955e-7b5edb19a280?alt=media&token=fb98f42d-6c63-406a-8be9-97b6b2a25122" alt="Custard Wala Logo" class="h-10 w-10 rounded-full object-cover shadow-[0_0_10px_var(--color-primary)]" />
+                <span class="font-headings text-xl font-bold tracking-widest uppercase">Custard Wala</span>
+            </div>
+            <div class="hidden md:flex items-center gap-10 text-sm font-medium tracking-wide">
+                <a href="#" class="text-white border-b-2 border-primary pb-1">Home</a>
+                <a href="#" class="text-muted-foreground hover:text-white transition-colors">Menu</a>
+                <a href="#" class="text-muted-foreground hover:text-white transition-colors">Gallery</a>
+                <a href="#" class="text-muted-foreground hover:text-white transition-colors">Offers</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button class="bg-primary/20 border border-primary text-primary px-4 py-2 rounded-md text-sm font-bold tracking-wider shadow-[0_0_15px_var(--color-primary)] uppercase hover:bg-primary/40 transition-colors">
+                    Contact Us
+                </button>
+            </div>
+        </nav>
+        
+        <!-- Hero Split Layout -->
+        <section class="flex flex-col md:flex-row min-h-[850px]">
+            <!-- Left Content -->
+            <div class="w-full md:w-1/2 flex flex-col justify-center px-12 md:px-24 pt-32 md:pt-0 relative">
+                <div class="absolute top-0 left-0 w-[400px] h-[400px] bg-primary/10 blur-[150px] rounded-full pointer-events-none"></div>
+                
+                <div class="inline-flex items-center gap-3 mb-8">
+                    <span class="w-12 h-[2px] bg-secondary shadow-[0_0_8px_var(--color-secondary)]"></span>
+                    <span class="text-secondary font-bold tracking-[0.2em] uppercase text-sm">First Time in Sagar</span>
+                </div>
+                
+                <h1 class="font-headings text-6xl xl:text-7xl font-black mb-6 leading-[1.1] uppercase">
+                    Premium <br/>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary drop-shadow-[0_0_10px_rgba(188,19,254,0.5)]">Desserts</span> <br/>
+                    & Fast Food
+                </h1>
+                
+                <p class="text-lg text-muted-foreground mb-10 max-w-md leading-relaxed">
+                    Experience the ultimate blend of sweet treats and savory delights in a modern, neon-lit atmosphere.
+                </p>
+
+                <div class="flex gap-4">
+                    <button class="bg-white text-black font-bold px-8 py-4 rounded-none uppercase tracking-widest text-sm shadow-[8px_8px_0_var(--color-primary)] hover:translate-y-[-2px] transition-transform">
+                        Order Now
+                    </button>
+                    <button class="border border-white/20 text-white font-bold px-8 py-4 rounded-none uppercase tracking-widest text-sm flex items-center gap-2 hover:bg-white/5 transition-colors">
+                        View Menu 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Image -->
+            <div class="w-full md:w-1/2 relative min-h-[400px]">
+                <div class="absolute inset-0 bg-gradient-to-r from-[#050505] to-transparent z-10 w-32 hidden md:block"></div>
+                <img 
+                    src="https://firebasestorage.googleapis.com/v0/b/banani-prod.appspot.com/o/reference-images%2Fac232cfd-9216-4d89-ae6e-b1188a7dc63f?alt=media&token=8716e46b-7b49-4993-934d-d5feec119f07" 
+                    class="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-500"
+                    alt="Shop Front"
+                />
+                <!-- Overlay elements -->
+                <div class="absolute bottom-12 right-12 z-20 bg-black/60 backdrop-blur-md border border-white/10 p-6 shadow-[0_0_30px_var(--color-primary)] max-w-[250px]">
+                    <div class="text-secondary font-bold text-3xl mb-1">4.9★</div>
+                    <div class="text-sm text-muted-foreground">Highest rated dessert spot in Sagar</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marquee or Features strip -->
+        <div class="border-y border-white/10 bg-black py-6 overflow-hidden flex items-center shadow-[0_0_20px_rgba(255,0,127,0.1)]">
+            <div class="flex gap-16 whitespace-nowrap px-8 text-primary font-headings text-2xl font-bold uppercase tracking-widest opacity-80 animate-marquee">
+                <span>★ Special Custards</span>
+                <span>★ Cheesy Pizzas</span>
+                <span>★ Thick Shakes</span>
+                <span>★ South Indian</span>
+                <span>★ Special Custards</span>
+                <span>★ Cheesy Pizzas</span>
+                <span>★ Thick Shakes</span>
+                <span>★ South Indian</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
