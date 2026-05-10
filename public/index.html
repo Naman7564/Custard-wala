@@ -75,12 +75,10 @@
                 <!-- Center soft glow, stable, no pulse -->
                 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[700px] md:h-[700px] bg-gradient-to-br from-primary/25 to-secondary/25 blur-[120px] md:blur-[180px] rounded-full z-10 pointer-events-none mix-blend-screen"></div>
                 
-                <!-- Fade to background color at the bottom to blend with next section -->
-                <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent z-10 pointer-events-none"></div>
             </div>
-
+            
             <!-- Content -->
-            <div class="w-full max-w-5xl flex flex-col items-center px-6 pb-32 md:pb-40 relative z-20 text-center animate-fade-in-up">
+            <div class="w-full max-w-5xl flex flex-col items-center px-6 pb-24 md:pb-32 relative z-20 text-center animate-fade-in-up">
                 
                 <!-- Tagline Badge -->
                 <div class="inline-flex items-center justify-center gap-2 mb-6 bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 shadow-[0_4px_15px_rgba(0,0,0,0.3)]">
@@ -116,7 +114,7 @@
                 </div>
             </div>
             <!-- Scroll Down Indicator -->
-            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center justify-center z-30 animate-fade-in-up" style="animation-delay: 0.8s;">
+            <div class="absolute bottom-12 md:bottom-16 left-1/2 -translate-x-1/2 flex items-center justify-center z-30 animate-fade-in-up" style="animation-delay: 0.8s;">
                 <button onclick="document.getElementById('explore-section').scrollIntoView({behavior: 'smooth'})" class="group flex items-center justify-center cursor-pointer focus:outline-none">
                     <!-- 3D Glassmorphism Circular Button -->
                     <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/5 backdrop-blur-md border border-white/30 shadow-[0_10px_40px_rgba(188,19,254,0.5),inset_0_2px_20px_rgba(255,255,255,0.2)] flex justify-center items-center relative overflow-hidden transition-all duration-500 hover:shadow-[0_15px_50px_rgba(188,19,254,0.8),inset_0_2px_20px_rgba(255,255,255,0.4)] group-hover:-translate-y-2 group-hover:bg-white/10">
