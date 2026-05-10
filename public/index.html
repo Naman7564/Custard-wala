@@ -61,25 +61,22 @@
             
             <!-- Background Image & Overlays -->
             <div class="absolute inset-0 z-0">
-                <div class="absolute inset-0 bg-black/60 backdrop-blur-[2px] z-10"></div>
-                <!-- Soft neon purple/pink glow around the center -->
-                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-primary/30 blur-[100px] md:blur-[150px] rounded-full z-10 pointer-events-none mix-blend-screen"></div>
-                <!-- Fade to background color at the bottom to blend with next section -->
-                <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent z-10"></div>
-                
-                <!-- Floating particles -->
-                <div class="absolute inset-0 z-10 pointer-events-none overflow-hidden">
-                    <div class="absolute top-[20%] left-[10%] w-3 h-3 bg-primary rounded-full blur-[2px] opacity-60 animate-pulse"></div>
-                    <div class="absolute top-[40%] right-[15%] w-4 h-4 bg-secondary rounded-full blur-[2px] opacity-40 animate-pulse" style="animation-delay: 1s;"></div>
-                    <div class="absolute bottom-[30%] left-[25%] w-2 h-2 bg-primary rounded-full blur-[1px] opacity-80 animate-pulse" style="animation-delay: 2s;"></div>
-                </div>
-
                 <img 
                     id="hero-bg-image"
                     src="https://firebasestorage.googleapis.com/v0/b/banani-prod.appspot.com/o/reference-images%2Fac232cfd-9216-4d89-ae6e-b1188a7dc63f?alt=media&token=8716e46b-7b49-4993-934d-d5feec119f07" 
-                    class="w-full h-full object-cover object-center grayscale transition-all duration-700 opacity-90"
+                    class="w-full h-full object-cover object-center opacity-90"
                     alt="Shop Front"
                 />
+                <div class="absolute inset-0 bg-black/60 backdrop-blur-[2px] z-10 pointer-events-none"></div>
+                
+                <!-- Continuous soft neon glow effect (purple and pink) -->
+                <div class="absolute inset-0 shadow-[inset_0_0_120px_rgba(188,19,254,0.4),inset_0_0_60px_rgba(255,0,127,0.3)] z-10 pointer-events-none"></div>
+                
+                <!-- Center soft glow, stable, no pulse -->
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[700px] md:h-[700px] bg-gradient-to-br from-primary/25 to-secondary/25 blur-[120px] md:blur-[180px] rounded-full z-10 pointer-events-none mix-blend-screen"></div>
+                
+                <!-- Fade to background color at the bottom to blend with next section -->
+                <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent z-10 pointer-events-none"></div>
             </div>
 
             <!-- Content -->
@@ -315,9 +312,8 @@
     </div>
 
     <script>
-        // Trigger navbar blur and hero glow effect on scroll
+        // Trigger navbar blur on scroll
         const nav = document.getElementById('main-nav');
-        const heroBg = document.getElementById('hero-bg-image');
         
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
@@ -325,13 +321,11 @@
                     nav.classList.add('bg-black/40', 'backdrop-blur-xl', 'shadow-lg');
                     nav.classList.remove('bg-transparent');
                 }
-                if (heroBg) heroBg.classList.remove('grayscale');
             } else {
                 if (nav) {
                     nav.classList.remove('bg-black/40', 'backdrop-blur-xl', 'shadow-lg');
                     nav.classList.add('bg-transparent');
                 }
-                if (heroBg) heroBg.classList.add('grayscale');
             }
         });
     </script>
