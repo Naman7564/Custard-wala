@@ -71,72 +71,75 @@
             </header>
 
             <!-- Sticky Categories Section -->
-            <div class="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-y border-black/5 pt-4 pb-2 shadow-[0_10px_30px_rgba(0,0,0,0.1)]">
-                <div class="flex overflow-x-auto gap-4 px-6 snap-x snap-mandatory scrollbar-hide pb-4 [&::-webkit-scrollbar]:hidden max-w-[1400px] mx-auto w-full">
-                    
-                    <!-- Custards -->
-                    <div class="flex flex-col items-center gap-3 min-w-[72px] snap-center snap-always group cursor-pointer">
-                        <div class="w-[72px] h-[72px] rounded-full flex items-center justify-center border transition-all duration-300 relative bg-primary/20 border-primary text-primary shadow-[0_0_20px_var(--color-primary)] scale-110">
-                            <div class="absolute inset-0 bg-primary/20 blur-md rounded-full"></div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="relative z-10"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <div class="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-y border-black/5 shadow-[0_8px_30px_rgba(0,0,0,0.08)]">
+                <div class="max-w-[1400px] mx-auto w-full px-4 py-4 overflow-x-auto [&::-webkit-scrollbar]:hidden scrollbar-hide">
+                    <div class="flex items-start justify-start md:justify-center gap-2 md:gap-6 min-w-max md:min-w-0 mx-auto">
+
+                    <!-- Custards (Active) -->
+                    <button class="flex flex-col items-center gap-2 min-w-[68px] group cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95">
+                        <div class="w-[60px] h-[60px] md:w-[68px] md:h-[68px] rounded-full flex items-center justify-center border-2 transition-all duration-300 relative bg-primary/10 border-primary text-primary shadow-[0_0_18px_rgba(188,19,254,0.4)]">
+                            <div class="absolute inset-0 bg-primary/15 blur-sm rounded-full"></div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="relative z-10"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                         </div>
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-center transition-colors duration-300 text-foreground drop-shadow-[0_0_5px_rgba(0,0,0,0.2)]">Custards</span>
-                    </div>
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-center text-primary whitespace-nowrap">Custards</span>
+                    </button>
 
                     <!-- Thick Shakes -->
-                    <div class="flex flex-col items-center gap-3 min-w-[72px] snap-center snap-always group cursor-pointer hover:opacity-80">
-                        <div class="w-[72px] h-[72px] rounded-full flex items-center justify-center border transition-all duration-300 relative bg-black/5 border-black/10 text-muted-foreground group-hover:text-foreground group-hover:border-black/30">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="relative z-10"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" x2="6" y1="2" y2="4"/><line x1="10" x2="10" y1="2" y2="4"/><line x1="14" x2="14" y1="2" y2="4"/></svg>
+                    <button class="flex flex-col items-center gap-2 min-w-[68px] group cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95">
+                        <div class="w-[60px] h-[60px] md:w-[68px] md:h-[68px] rounded-full flex items-center justify-center border-2 transition-all duration-300 border-black/10 bg-black/3 text-muted-foreground group-hover:border-primary/40 group-hover:text-primary group-hover:shadow-[0_0_12px_rgba(188,19,254,0.2)]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" x2="6" y1="2" y2="4"/><line x1="10" x2="10" y1="2" y2="4"/><line x1="14" x2="14" y1="2" y2="4"/></svg>
                         </div>
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-center transition-colors duration-300 text-muted-foreground group-hover:text-foreground">Thick Shakes</span>
-                    </div>
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-center text-muted-foreground group-hover:text-foreground whitespace-nowrap transition-colors duration-300">Thick Shakes</span>
+                    </button>
 
                     <!-- Pizza -->
-                    <div class="flex flex-col items-center gap-3 min-w-[72px] snap-center snap-always group cursor-pointer hover:opacity-80">
-                        <div class="w-[72px] h-[72px] rounded-full flex items-center justify-center border transition-all duration-300 relative bg-black/5 border-black/10 text-muted-foreground group-hover:text-foreground group-hover:border-black/30">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="relative z-10"><path d="M15 11h.01"/><path d="M11 15h.01"/><path d="M16 16h.01"/><path d="m2 16 20 6-6-20A20 20 0 0 0 2 16"/><path d="M5.71 17.11a17.04 17.04 0 0 1 11.4-11.4"/></svg>
+                    <button class="flex flex-col items-center gap-2 min-w-[68px] group cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95">
+                        <div class="w-[60px] h-[60px] md:w-[68px] md:h-[68px] rounded-full flex items-center justify-center border-2 transition-all duration-300 border-black/10 bg-black/3 text-muted-foreground group-hover:border-primary/40 group-hover:text-primary group-hover:shadow-[0_0_12px_rgba(188,19,254,0.2)]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 11h.01"/><path d="M11 15h.01"/><path d="M16 16h.01"/><path d="m2 16 20 6-6-20A20 20 0 0 0 2 16"/><path d="M5.71 17.11a17.04 17.04 0 0 1 11.4-11.4"/></svg>
                         </div>
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-center transition-colors duration-300 text-muted-foreground group-hover:text-foreground">Pizza</span>
-                    </div>
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-center text-muted-foreground group-hover:text-foreground whitespace-nowrap transition-colors duration-300">Pizza</span>
+                    </button>
 
                     <!-- Sandwiches -->
-                    <div class="flex flex-col items-center gap-3 min-w-[72px] snap-center snap-always group cursor-pointer hover:opacity-80">
-                        <div class="w-[72px] h-[72px] rounded-full flex items-center justify-center border transition-all duration-300 relative bg-black/5 border-black/10 text-muted-foreground group-hover:text-foreground group-hover:border-black/30">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="relative z-10"><rect width="20" height="14" x="2" y="5" rx="2" ry="2"/><line x1="2" x2="22" y1="9" y2="9"/><line x1="2" x2="22" y1="15" y2="15"/></svg>
+                    <button class="flex flex-col items-center gap-2 min-w-[68px] group cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95">
+                        <div class="w-[60px] h-[60px] md:w-[68px] md:h-[68px] rounded-full flex items-center justify-center border-2 transition-all duration-300 border-black/10 bg-black/3 text-muted-foreground group-hover:border-primary/40 group-hover:text-primary group-hover:shadow-[0_0_12px_rgba(188,19,254,0.2)]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2" ry="2"/><line x1="2" x2="22" y1="9" y2="9"/><line x1="2" x2="22" y1="15" y2="15"/></svg>
                         </div>
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-center transition-colors duration-300 text-muted-foreground group-hover:text-foreground">Sandwiches</span>
-                    </div>
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-center text-muted-foreground group-hover:text-foreground whitespace-nowrap transition-colors duration-300">Sandwiches</span>
+                    </button>
 
                     <!-- South Indian -->
-                    <div class="flex flex-col items-center gap-3 min-w-[72px] snap-center snap-always group cursor-pointer hover:opacity-80">
-                        <div class="w-[72px] h-[72px] rounded-full flex items-center justify-center border transition-all duration-300 relative bg-black/5 border-black/10 text-muted-foreground group-hover:text-foreground group-hover:border-black/30">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="relative z-10"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+                    <button class="flex flex-col items-center gap-2 min-w-[68px] group cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95">
+                        <div class="w-[60px] h-[60px] md:w-[68px] md:h-[68px] rounded-full flex items-center justify-center border-2 transition-all duration-300 border-black/10 bg-black/3 text-muted-foreground group-hover:border-primary/40 group-hover:text-primary group-hover:shadow-[0_0_12px_rgba(188,19,254,0.2)]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
                         </div>
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-center transition-colors duration-300 text-muted-foreground group-hover:text-foreground">South Indian</span>
-                    </div>
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-center text-muted-foreground group-hover:text-foreground whitespace-nowrap transition-colors duration-300">South Indian</span>
+                    </button>
 
                     <!-- Combos -->
-                    <div class="flex flex-col items-center gap-3 min-w-[72px] snap-center snap-always group cursor-pointer hover:opacity-80">
-                        <div class="w-[72px] h-[72px] rounded-full flex items-center justify-center border transition-all duration-300 relative bg-black/5 border-black/10 text-muted-foreground group-hover:text-foreground group-hover:border-black/30">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="relative z-10"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+                    <button class="flex flex-col items-center gap-2 min-w-[68px] group cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95">
+                        <div class="w-[60px] h-[60px] md:w-[68px] md:h-[68px] rounded-full flex items-center justify-center border-2 transition-all duration-300 border-black/10 bg-black/3 text-muted-foreground group-hover:border-primary/40 group-hover:text-primary group-hover:shadow-[0_0_12px_rgba(188,19,254,0.2)]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
                         </div>
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-center transition-colors duration-300 text-muted-foreground group-hover:text-foreground">Combos</span>
-                    </div>
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-center text-muted-foreground group-hover:text-foreground whitespace-nowrap transition-colors duration-300">Combos</span>
+                    </button>
 
                     <!-- Ice Cream -->
-                    <div class="flex flex-col items-center gap-3 min-w-[72px] snap-center snap-always group cursor-pointer hover:opacity-80">
-                        <div class="w-[72px] h-[72px] rounded-full flex items-center justify-center border transition-all duration-300 relative bg-black/5 border-black/10 text-muted-foreground group-hover:text-foreground group-hover:border-black/30">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="relative z-10"><path d="m7 11 4.08 10.35a1 1 0 0 0 1.84 0L17 11"/><path d="M17 7A5 5 0 0 0 7 7c0 2 1.5 4 1.5 4h7s1.5-2 1.5-4Z"/></svg>
+                    <button class="flex flex-col items-center gap-2 min-w-[68px] group cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95">
+                        <div class="w-[60px] h-[60px] md:w-[68px] md:h-[68px] rounded-full flex items-center justify-center border-2 transition-all duration-300 border-black/10 bg-black/3 text-muted-foreground group-hover:border-primary/40 group-hover:text-primary group-hover:shadow-[0_0_12px_rgba(188,19,254,0.2)]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 11 4.08 10.35a1 1 0 0 0 1.84 0L17 11"/><path d="M17 7A5 5 0 0 0 7 7c0 2 1.5 4 1.5 4h7s1.5-2 1.5-4Z"/></svg>
                         </div>
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-center transition-colors duration-300 text-muted-foreground group-hover:text-foreground">Ice Cream</span>
-                    </div>
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-center text-muted-foreground group-hover:text-foreground whitespace-nowrap transition-colors duration-300">Ice Cream</span>
+                    </button>
 
                     <!-- Drinks -->
-                    <div class="flex flex-col items-center gap-3 min-w-[72px] snap-center snap-always group cursor-pointer hover:opacity-80">
-                        <div class="w-[72px] h-[72px] rounded-full flex items-center justify-center border transition-all duration-300 relative bg-black/5 border-black/10 text-muted-foreground group-hover:text-foreground group-hover:border-black/30">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="relative z-10"><path d="m8 22 1-15h6l1 15"/><path d="M6 7h12"/><path d="m12 3-1 4"/></svg>
+                    <button class="flex flex-col items-center gap-2 min-w-[68px] group cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95">
+                        <div class="w-[60px] h-[60px] md:w-[68px] md:h-[68px] rounded-full flex items-center justify-center border-2 transition-all duration-300 border-black/10 bg-black/3 text-muted-foreground group-hover:border-primary/40 group-hover:text-primary group-hover:shadow-[0_0_12px_rgba(188,19,254,0.2)]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 22 1-15h6l1 15"/><path d="M6 7h12"/><path d="m12 3-1 4"/></svg>
                         </div>
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-center transition-colors duration-300 text-muted-foreground group-hover:text-foreground">Drinks</span>
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-center text-muted-foreground group-hover:text-foreground whitespace-nowrap transition-colors duration-300">Drinks</span>
+                    </button>
+
                     </div>
                 </div>
             </div>
